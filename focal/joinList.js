@@ -14,5 +14,13 @@
 
 // Test / Driver Code below...
 const conceptList = ["gists", "types", "operators", "iteration", "problem solving"];
-const concepts = joinList(conceptList);
-console.log(`Today I learned about ${concepts}.`);
+
+const concepts = joinList(conceptList) 
+    let resultString = "";
+
+    for (let i = 0; i < conceptList.length - 1; i++) {
+        resultString += `${conceptList[i]}`;
+    }
+    return resultString;
+    
+console.log(concepts(conceptList));
