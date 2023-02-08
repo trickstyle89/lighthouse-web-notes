@@ -1,12 +1,17 @@
 // FUNCTION IMPLEMENTATION (MULTIPLE BUGS)
+// Bug was found in the use of wrong 'str' instead of 'lastIndex' 
+// that is why issues where with words with spaces.
+
 const isPalindrome = function(str) {
     const noSpaces = str.split(" ").join(""); //looks ok
     const midIndex = Math.floor(noSpaces.length/2); //odd numbered words?
     const lastIndex = noSpaces.length - 1;  // here?
   
     for (let i = 0; i < midIndex; i++) {
-      if (str[i] !== str[lastIndex - i]) return false;
+      if (str.length === 1) return true; 
+      if (noSpaces[i] !== noSpaces[lastIndex - i] || str === []) return false;
     }
+    return true;
   }
   
   // Assertion Function
