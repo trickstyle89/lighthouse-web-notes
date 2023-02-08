@@ -1,12 +1,12 @@
-var input = process.argv.slice(2);
+const input = process.argv.slice(2);
 
 function reverse(input) {
 
-if (input !== null || input.length > 0) {
-  return input.toString().split('').reverse().join('');
+  if (input !== null || input.length > 0) {
+    return input.toString().split('').reverse().join('');
+  }
+  return 'Invalid input';
+
 }
-return 'Invalid input';
 
-};
-
-console.log(reverse(input))
+console.log(reverse(input));

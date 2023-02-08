@@ -1,7 +1,7 @@
 function average(list) {
-  var sum = 0;
+  let sum = 0;
 
-  for (var num of list) {
+  for (const num of list) {
     sum += num;
   }
 

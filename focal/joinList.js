@@ -3,7 +3,7 @@
  * into one String, concepts, with each list item separated from
  * the previous by a comma.
  *
- * To implement this we'll create a joinList function which will take 
+ * To implement this we'll create a joinList function which will take
  * in any array of strings return a comma-separated string.
  *
  * Note: We can NOT use the built-in Array join function.
@@ -16,7 +16,7 @@
 const conceptList = ["gists", "types", "operators", "iteration", "problem solving"];
 
 function joinList(conceptList) {
-    console.log(`Today I learned about ${conceptList.slice(0, -1).join(', ')} and ${conceptList[conceptList.length - 1]}.`);
-};
+  console.log(`Today I learned about ${conceptList.slice(0, -1).join(', ')} and ${conceptList[conceptList.length - 1]}.`);
+}
 
 console.log(joinList(conceptList));
