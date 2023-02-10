@@ -14,3 +14,5 @@ const actionWhenFound = function(names) {
 };
 
 findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
+
+
