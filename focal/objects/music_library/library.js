@@ -32,10 +32,10 @@ const library = {
 // p02: Other Playlist - 1 tracks
 
 // I understand the for of loop a little better the the for in.
-const printPlaylists = (library) => {
+const printPlaylists = () => {
   // I like it better because I can use the Object.values.keys.entries() first.
   // seems more explicit and controllable.
-  for (const playlist of Object.values(library.playlists)) {
+  for (const playlist of Object.values(this.playlists)) {
     console.log(`${playlist.id}: ${playlist.name} - ${playlist.tracks.length} tracks`);
   }
 };
@@ -46,8 +46,8 @@ const printPlaylists = (library) => {
 // t02: Model View Controller by James Dempsey (WWDC 2003)
 // t03: Four Thirty-Three by John Cage (Woodstock 1952)
 
-const printTracks = function(library) {
-  for (const trackData of Object.values(library.tracks)) {
+const printTracks = () => {
+  for (const trackData of Object.values(this.tracks)) {
     console.log(`${trackData.id}: ${trackData.name} by ${trackData.artist} (${trackData.album})`);
   }
 };
@@ -64,15 +64,11 @@ const printTrackId = function(playlistId) {
   // .test() is required for the if statement and regex
   if (pPattern.test(playlistId)) {
     // accesses different areas of the object based on input. playlists versus tracks.
-    for (const playTrackData of Object.values(library.playlists)) {
-      console.log(`${playTrackData.id}: ${playTrackData.name} by ${playTrackData.artist}`);
+       library.printPlaylists();
     }
-  } else {
-    for (const playTrackData of Object.values(library.tracks)) {
-      console.log(`${playTrackData.id}: ${playTrackData.name} by ${playTrackData.artist}`);
-    }
-  }
-};
+    library.printTracks();
+  } 
+
 
 
 // adds an existing track to an existing playlist
@@ -80,16 +76,14 @@ const addTrackToPlaylist = function(trackId, playlistId) {
   
   //need to be REALLY specific on where to .push();
   library.playlists[playlistId].tracks.push(trackId);
-  for (const lists of Object.values(library.playlists)) {
-    console.log(`${lists.tracks}`);
-  }
-};
+  printTracks();
+  };
    
 
 
 // generates a unique id
 // (already implemented: use this for addTrack and addPlaylist)
-const generateUid = function() {
+const generateUid = () => {
   return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 };
 
@@ -117,7 +111,7 @@ const newTrackTemplate = {
      
  //same idea of the first above but more concise.
 
-     const addTrack = function(id, name, artist, album) {
+     const addTrack = function(generateUid, name, artist, album) {
        let newTrack = Object.assign({}, newTrackTemplate);
        newTrack.id = id;
        newTrack.name = name;
@@ -130,7 +124,7 @@ const newTrackTemplate = {
      // the most concise but using a callback and more complicated.
      // establishes the template first with a reusable function.
 
-     const createTrack = function(id, name, artist, album) {
+     const createTrack = function(generateUid, name, artist, album) {
        return {
          id: id,
          name: name,
@@ -140,13 +134,14 @@ const newTrackTemplate = {
      };
      
      // cheeky recall to quickly create a new track.
-     const addTrack = function(id, name, artist, album) {
+     const addTrack = function(generateUid, name, artist, album) {
        let newTrack = createTrack(id, name, artist, album);
        library.tracks[id] = newTrack;
+       printTracks();
      };
 
 // adds a playlist to the library
-const createPlayList = function(id, name, tracks) {
+const createPlayList = function(generateUid, name, tracks) {
        return {
            id: id,
            name: name,
@@ -154,9 +149,10 @@ const createPlayList = function(id, name, tracks) {
        };
    };
    
-   const addPlaylist = function(id, name, tracks) {
+   const addPlaylist = function(generateUid, name, tracks) {
        let newPlayList = createPlayList(id, name, tracks);
        library.playlists[id] = newPlayList;
+       printPlaylists();
    };
 
 
