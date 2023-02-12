@@ -1,2 +1,25 @@
 
 Week_1/Day_5/assessment-exam-student/
+*.js
+chalk-test/node_modules/supports-color/readme.md
+chalk-test/node_modules/supports-color/package.json
+chalk-test/node_modules/supports-color/license
+chalk-test/node_modules/has-flag/readme.md
+chalk-test/node_modules/has-flag/package.json
+chalk-test/node_modules/has-flag/license
+chalk-test/node_modules/has-flag/index.d.ts
+chalk-test/node_modules/color-name/README.md
+chalk-test/node_modules/color-name/package.json
+chalk-test/node_modules/color-name/LICENSE
+chalk-test/node_modules/color-convert/README.md
+chalk-test/node_modules/color-convert/package.json
+chalk-test/node_modules/color-convert/LICENSE
+chalk-test/node_modules/color-convert/CHANGELOG.md
+chalk-test/node_modules/chalk/readme.md
+chalk-test/node_modules/chalk/package.json
+chalk-test/node_modules/chalk/license
+chalk-test/node_modules/chalk/index.d.ts
+chalk-test/node_modules/ansi-styles/readme.md
+chalk-test/node_modules/ansi-styles/package.json
+chalk-test/node_modules/ansi-styles/license
+chalk-test/node_modules/ansi-styles/index.d.ts
